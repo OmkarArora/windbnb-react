@@ -1,0 +1,48 @@
+.stay-card .stay-img {
+  width: 100%;
+  border-radius: 24px;
+}
+
+.stay-card .stay-details {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5rem 0.2rem;
+}
+
+.stay-card .stay-details .room-details .host-tag {
+  font-size: 12px;
+  font-weight: 700;
+  color: #4f4f4f;
+  border: 1px solid #4f4f4f;
+  border-radius: 12px;
+  padding: 0.2rem 0.5rem;
+}
+
+.stay-card .stay-details .room-details .room {
+  font-size: 14px;
+  font-weight: 500;
+  color: #828282;
+  margin-left: 0.5rem;
+}
+
+.stay-card .stay-details .star-rating {
+  color: var(--primary-color);
+  font-weight: 500;
+  font-size: 14px;
+}
+
+.stay-card .stay-details .star-rating .icon {
+  color: var(--primary-color);
+  font-size: 16px;
+}
+
+.stay-card .stay-details .star-rating .rating-value {
+  vertical-align: top;
+}
+
+.stay-card .stay-heading {
+  padding: 0.2rem 0.2rem;
+  color: #333333;
+  font-weight: 600;
+  font-size: 16px;
+}
