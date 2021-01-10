@@ -1,17 +1,16 @@
 import StayCard from "./StayCard/StayCard";
 import "./staysGrid.css";
+import StayData from "../data/stays.json";
 
 const StaysGrid = () => {
-    return(
-        <div className="stays-grid">
-            <StayCard/>
-            <StayCard/>
-            <StayCard/>
-            <StayCard/>
-            <StayCard/>
-            <StayCard/>
-        </div>
-    )
-}
+  console.log(StayData);
+  return (
+    <div className="stays-grid">
+      {StayData.map((item, index) => (
+        <StayCard stayObj={item} key={index}/>
+      ))}
+    </div>
+  );
+};
 
 export default StaysGrid;
