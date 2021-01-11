@@ -1,13 +1,14 @@
 .searchbox-big {
+  box-sizing: border-box;
   position: absolute;
   top: 0;
   z-index: 10;
   background-color: white;
   width: 100vw;
   display: flex;
-  border: 1px solid blue;
-  padding: 1rem;
+  padding: 1rem 1rem 5rem 1rem;
   font-family: "Mulish", sans-serif;
+  /* height: 40vh; */
 }
 
 .searchbox-big .heading {
@@ -56,6 +57,24 @@
   padding: 0 1.5rem;
 }
 
+.searchbox-big .btn-search-big:focus {
+  outline: none;
+}
+
 .searchbox-big .btn-search-big .icon {
   padding: 0 5px 0 0;
+}
+
+.searchbox-big .btn-searchClose {
+  position: absolute;
+  right: 1.5rem;
+  top: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1.1rem;
+}
+
+.searchbox-big .btn-searchClose:focus {
+  outline: none;
 }

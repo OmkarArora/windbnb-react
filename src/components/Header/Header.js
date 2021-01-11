@@ -3,19 +3,20 @@ import Logo from "../images/logo.svg";
 import { FaSearch } from "react-icons/fa";
 import SearchBoxBig from "../SearchBoxBig/SearchBoxBig";
 
-const Header = () => {
+const Header = ({isSearchOpen, setSearchBoxState}) => {
     return (
         <>
-        <SearchBoxBig/>
-        <header className="header">
+        {isSearchOpen?<SearchBoxBig setSearchBoxState={setSearchBoxState}/>: <header className="header">
             <img src={Logo} alt="logo" className="header-logo"/>
-            <div className="searchbar">
+            <div className="searchbar"  onClick={() => setSearchBoxState(true)}>
                 <div className="place">Helsinki, Finland</div>
                 <div className="guest">Add guests</div>
                 <div className="container-searchIcon"><FaSearch className="icon"/></div>
                 
             </div>
-        </header>
+        </header>}
+        
+        
         </>
     )
 }

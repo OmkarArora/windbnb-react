@@ -2,7 +2,6 @@ import "./stayCard.css";
 import { FaStar } from "react-icons/fa";
 
 const StayCard = ({stayObj}) => {
-    console.log(stayObj);
     return(
         <div className="stay-card">
             <img src={stayObj.photo} alt={stayObj.title} className="stay-img"/>
