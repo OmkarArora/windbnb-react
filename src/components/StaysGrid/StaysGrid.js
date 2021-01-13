@@ -1,8 +1,8 @@
 import StayCard from "./StayCard/StayCard";
 import "./staysGrid.css";
-import StayData from "../data/stays.json";
 
-const StaysGrid = () => {
+
+const StaysGrid = ({StayData}) => {
   return (
     <div className="stays-grid">
       {StayData.map((item, index) => (
