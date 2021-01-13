@@ -8,6 +8,7 @@ const Home = () => {
   const [isSearchOpen, setSearchBoxState] = useState(false);
   const [stayData, setStayData] = useState(StayData);
   const [searchValue, setSearchValue] = useState("");
+  const [displayValue, setDisplayValue] = useState("");
 
   useEffect(() => {
     let homeContent = document.querySelector(".home-content");
@@ -26,7 +27,7 @@ const Home = () => {
     }
   });
 
-  console.log(uniquePlaces);
+  // console.log(uniquePlaces);
 
   function onInputChange(value) {
     setSearchValue(value);
@@ -37,9 +38,10 @@ const Home = () => {
       setStayData(StayData);
       setSearchBoxState(false);
     } else {
-      console.log(searchValue)
+      // console.log(searchValue)
       let _stayData = StayData.filter((item) => `${item.city}, ${item.country}`.toUpperCase().includes(searchValue.toUpperCase()));
       setStayData(_stayData);
+      setDisplayValue(searchValue);
       setSearchBoxState(false);
     }
   }
@@ -54,9 +56,10 @@ const Home = () => {
         searchInputValue={searchValue}
         onSearchBtnClick={onSearchBtnClick}
         uniquePlaces={uniquePlaces}
+        displayValue={displayValue}
       />
       <div className="home-content">
-        <div className="place-heading">Stays in Finland</div>
+        <div className="place-heading">Stays in {displayValue===""?"Finland": displayValue}</div>
         <StaysGrid StayData={stayData} />
       </div>
     </div>

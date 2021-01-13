@@ -13,6 +13,7 @@ const SearchBoxBig = ({
   return (
     <div className="search-wrapper">
       <div className="searchbox-big">
+        <div className="location-wrapper">
         <div
           className="container-location"
           onClick={() => {
@@ -37,6 +38,17 @@ const SearchBoxBig = ({
             onChange={(event) => onInputChange(event.target.value)}
           ></input>
         </div>
+        <div className="search-options-container">
+        <ul className="places">
+          {uniquePlaces.map((item) => (
+            <li key={item} onClick={() => onInputChange(item)}>
+              <IoLocationSharp className="location icon" />
+              <span>{item}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+      </div>
         <div
           className="container-guests"
           onClick={() => {
@@ -66,16 +78,7 @@ const SearchBoxBig = ({
           <GrClose />
         </button>
       </div>
-      <div className="search-options-container">
-        <ul className="places">
-          {uniquePlaces.map((item) => (
-            <li key={item} onClick={() => onInputChange(item)}>
-              <IoLocationSharp className="location icon" />
-              <span>{item}</span>
-            </li>
-          ))}
-        </ul>
-      </div>
+      
     </div>
   );
 };

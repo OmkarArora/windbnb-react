@@ -9,7 +9,8 @@ const Header = ({
   onInputChange,
   onSearchBtnClick,
   uniquePlaces,
-  searchInputValue
+  searchInputValue,
+  displayValue
 }) => {
   return (
     <>
@@ -25,7 +26,7 @@ const Header = ({
         <header className="header">
           <img src={Logo} alt="logo" className="header-logo" />
           <div className="searchbar" onClick={() => setSearchBoxState(true)}>
-            <div className="place">{searchInputValue}</div>
+            <div className="place">{displayValue===""?"Finland":searchInputValue}</div>
             <div className="guest">Add guests</div>
             <div className="container-searchIcon">
               <FaSearch className="icon" />

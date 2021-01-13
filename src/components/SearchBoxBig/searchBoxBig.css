@@ -8,14 +8,19 @@
   font-family: "Mulish", sans-serif;
 }
 
+.search-options-container {
+  display: flex;
+  justify-content: center;
+}
+
 .search-options-container ul.places {
   list-style: none;
-  padding-inline-start: 2rem;
+  padding-inline-start: 0;
   display: none;
 }
 
 .search-options-container ul.places li {
-  padding: 0.5rem;
+  padding: 0.5rem 0 0.5rem 0;
   cursor: pointer;
   width: 30vw;
   user-select: none;
@@ -84,6 +89,7 @@
   border: none;
   font-family: inherit;
   padding: 0 1.5rem;
+  max-height: 6vh;
 }
 
 .searchbox-big .btn-search-big:focus {
