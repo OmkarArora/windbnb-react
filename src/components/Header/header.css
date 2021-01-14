@@ -29,6 +29,10 @@
   color: #bdbdbd;
 }
 
+.header .searchbar .guest.active {
+  color: black;
+}
+
 .header .searchbar .container-searchIcon {
   border-top-right-radius: 16px;
   border-bottom-right-radius: 16px;

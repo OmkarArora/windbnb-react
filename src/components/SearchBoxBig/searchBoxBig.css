@@ -11,6 +11,7 @@
 .search-options-container {
   display: flex;
   justify-content: center;
+  margin-top: 1rem;
 }
 
 .search-options-container ul.places {
@@ -32,6 +33,29 @@
 
 .search-options-container ul.places .icon.location {
   padding: 0 8px 0 0;
+}
+
+.guest-input-container {
+  display: none;
+  margin-left: 1.5rem;
+  margin-top: 2rem;
+}
+
+.guest-input-container .subcontainer:nth-child(2) {
+  margin-top: 1.5rem;
+}
+
+.guest-input-container .guest-heading {
+  font-weight: 700;
+  font-size: 14px;
+  margin: 0;
+}
+
+.guest-input-container .guest-subheading {
+  font-weight: 400;
+  font-size: 14px;
+  margin: 2px 0 12px 0;
+  color: #bdbdbd;
 }
 
 .searchbox-big {

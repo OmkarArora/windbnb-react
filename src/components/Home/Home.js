@@ -9,6 +9,8 @@ const Home = () => {
   const [stayData, setStayData] = useState(StayData);
   const [searchValue, setSearchValue] = useState("");
   const [displayValue, setDisplayValue] = useState("");
+  const [adultGuestValue, setAdultGuestValue] = useState(0);
+  const [childGuestValue, setChildGuestValue] = useState(0);
 
   useEffect(() => {
     let homeContent = document.querySelector(".home-content");
@@ -27,19 +29,28 @@ const Home = () => {
     }
   });
 
-  // console.log(uniquePlaces);
-
   function onInputChange(value) {
     setSearchValue(value);
   }
 
   function onSearchBtnClick() {
     if (searchValue === "") {
-      setStayData(StayData);
+      let numOfGuests = childGuestValue + adultGuestValue;
+      let _stayData = StayData.filter((item) =>
+      item.maxGuests>=numOfGuests
+    );
+      setStayData(_stayData);
       setSearchBoxState(false);
     } else {
-      // console.log(searchValue)
-      let _stayData = StayData.filter((item) => `${item.city}, ${item.country}`.toUpperCase().includes(searchValue.toUpperCase()));
+      let _stayData = StayData.filter((item) =>
+        `${item.city}, ${item.country}`
+          .toUpperCase()
+          .includes(searchValue.toUpperCase())
+      );
+      let numOfGuests = childGuestValue + adultGuestValue;
+      _stayData = _stayData.filter((item) =>
+      item.maxGuests>=numOfGuests
+    );
       setStayData(_stayData);
       setDisplayValue(searchValue);
       setSearchBoxState(false);
@@ -51,15 +62,20 @@ const Home = () => {
       <Header
         isSearchOpen={isSearchOpen}
         setSearchBoxState={setSearchBoxState}
-        // onPlaceChange
         onInputChange={onInputChange}
         searchInputValue={searchValue}
         onSearchBtnClick={onSearchBtnClick}
         uniquePlaces={uniquePlaces}
         displayValue={displayValue}
+        adultGuestValue={adultGuestValue}
+        setAdultGuestValue={setAdultGuestValue}
+        childGuestValue={childGuestValue}
+        setChildGuestValue={setChildGuestValue}
       />
       <div className="home-content">
-        <div className="place-heading">Stays in {displayValue===""?"Finland": displayValue}</div>
+        <div className="place-heading">
+          Stays in {displayValue === "" ? "Finland" : displayValue}
+        </div>
         <StaysGrid StayData={stayData} />
       </div>
     </div>

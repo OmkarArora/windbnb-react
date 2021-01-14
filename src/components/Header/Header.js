@@ -10,7 +10,11 @@ const Header = ({
   onSearchBtnClick,
   uniquePlaces,
   searchInputValue,
-  displayValue
+  displayValue,
+  adultGuestValue,
+  setAdultGuestValue,
+  childGuestValue,
+  setChildGuestValue,
 }) => {
   return (
     <>
@@ -21,13 +25,24 @@ const Header = ({
           onSearchBtnClick={onSearchBtnClick}
           uniquePlaces={uniquePlaces}
           searchInputValue={searchInputValue}
+          adultGuestValue={adultGuestValue}
+          setAdultGuestValue={setAdultGuestValue}
+          childGuestValue={childGuestValue}
+          setChildGuestValue={setChildGuestValue}
         />
       ) : (
         <header className="header">
           <img src={Logo} alt="logo" className="header-logo" />
           <div className="searchbar" onClick={() => setSearchBoxState(true)}>
-            <div className="place">{displayValue===""?"Finland":searchInputValue}</div>
-            <div className="guest">Add guests</div>
+            <div className="place">
+              {displayValue === "" ? "Finland" : searchInputValue}
+            </div>
+
+            {adultGuestValue + childGuestValue === 0 ? (
+              <div className="guest">Add guests</div>
+            ) : (
+              <div className="guest active">{adultGuestValue + childGuestValue} guests</div>
+            )}
             <div className="container-searchIcon">
               <FaSearch className="icon" />
             </div>

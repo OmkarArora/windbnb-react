@@ -1,0 +1,29 @@
+.container-numberInput {
+  padding: 0;
+  display: flex;
+  width: max-content;
+  font-family: "Mulish", sans-serif;
+  font-size: 14px;
+  color: #333333;
+  font-weight: bold;
+}
+
+.container-numberInput .value {
+  padding: 0 10px;
+}
+
+.container-numberInput .btn-numberInput {
+  background-color: white;
+  border: 1px solid #828282;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.container-numberInput .btn-numberInput:focus {
+  outline: none;
+}
+
+.container-numberInput .btn-numberInput .icon {
+  color: #828282;
+  font-size: 0.5rem;
+}
