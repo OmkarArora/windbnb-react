@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import Header from "../Header/Header";
 import StaysGrid from "../StaysGrid/StaysGrid";
 import StayData from "../data/stays.json";
+import Footer from "../Footer/Footer";
 
 const Home = () => {
   const [isSearchOpen, setSearchBoxState] = useState(false);
@@ -36,9 +37,7 @@ const Home = () => {
   function onSearchBtnClick() {
     if (searchValue === "") {
       let numOfGuests = childGuestValue + adultGuestValue;
-      let _stayData = StayData.filter((item) =>
-      item.maxGuests>=numOfGuests
-    );
+      let _stayData = StayData.filter((item) => item.maxGuests >= numOfGuests);
       setStayData(_stayData);
       setSearchBoxState(false);
     } else {
@@ -48,9 +47,7 @@ const Home = () => {
           .includes(searchValue.toUpperCase())
       );
       let numOfGuests = childGuestValue + adultGuestValue;
-      _stayData = _stayData.filter((item) =>
-      item.maxGuests>=numOfGuests
-    );
+      _stayData = _stayData.filter((item) => item.maxGuests >= numOfGuests);
       setStayData(_stayData);
       setDisplayValue(searchValue);
       setSearchBoxState(false);
@@ -77,6 +74,7 @@ const Home = () => {
           Stays in {displayValue === "" ? "Finland" : displayValue}
         </div>
         <StaysGrid StayData={stayData} />
+        <Footer />
       </div>
     </div>
   );
